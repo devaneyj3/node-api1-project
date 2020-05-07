@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "gitignore": "^0.6.0",
+    "node": "^14.2.0",
+    "nodemon": "^2.0.3",
+    "shortid": "^2.2.15"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "api1-project",
+  "description": "## Topics",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devaneyj3/node-api1-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devaneyj3/node-api1-project/issues"
+  },
+  "homepage": "https://github.com/devaneyj3/node-api1-project#readme"
+}
