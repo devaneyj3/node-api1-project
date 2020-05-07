@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 import "./Users.scss";
 import User from "../User";
 
+import { useHistory } from "react-router-dom";
+
 const Users = (props) => {
-  const [people, setPeople] = useState([]);
+  let history = useHistory();
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/users")
-      .then((res) => setPeople(res.data));
+      .then((res) => props.setPeople(res.data));
   });
 
   const Delete = (id) => {
@@ -17,15 +19,19 @@ const Users = (props) => {
       .delete(`http://localhost:5000/api/users/${id}`)
       .then((res) => console.log(res));
   };
+  const Edit = (id) => {
+    history.push(`/edit-user/${id}`);
+  };
   return (
     <section className="users-container">
-      {people.map((person) => {
+      {props.people.map((person) => {
         return (
           <User
             key={person.id}
             name={person.name}
             bio={person.bio}
             delete={() => Delete(person.id)}
+            edit={() => Edit(person.id)}
           />
         );
       })}

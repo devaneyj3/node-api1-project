@@ -9,7 +9,9 @@ const User = (props) => {
     <section className="User">
       <h1>{props.name}</h1>
       <p>{props.bio}</p>
-      <Button color="primary">Edit</Button>
+      <Button color="primary" onClick={props.edit}>
+        Edit
+      </Button>
       <Button color="danger" onClick={props.delete}>
         Delete
       </Button>
