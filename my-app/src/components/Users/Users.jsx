@@ -11,10 +11,23 @@ const Users = (props) => {
       .get("http://localhost:5000/api/users")
       .then((res) => setPeople(res.data));
   });
+
+  const Delete = (id) => {
+    axios
+      .delete(`http://localhost:5000/api/users/${id}`)
+      .then((res) => console.log(res));
+  };
   return (
     <section className="users-container">
       {people.map((person) => {
-        return <User name={person.name} bio={person.bio} />;
+        return (
+          <User
+            key={person.id}
+            name={person.name}
+            bio={person.bio}
+            delete={() => Delete(person.id)}
+          />
+        );
       })}
     </section>
   );

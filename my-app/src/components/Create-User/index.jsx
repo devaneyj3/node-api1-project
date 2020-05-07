@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Alert } from "reactstrap";
+import { Alert, Button } from "reactstrap";
 
 import "./Create-User.scss";
 import Axios from "axios";
@@ -23,6 +23,7 @@ const CreateUser = (props) => {
   };
   return (
     <>
+      <h1>Create a User</h1>
       {message ? <Alert color="success">{message}</Alert> : null}
       <section className="form-container">
         <form onSubmit={submit}>
@@ -40,7 +41,9 @@ const CreateUser = (props) => {
             onChange={change}
             value={data.bio}
           />
-          <input type="submit" value="Add User" />
+          <Button color="success" type="submit">
+            Add User
+          </Button>
         </form>
       </section>
     </>

@@ -5,7 +5,7 @@ import "./Nav.scss";
 
 const Nav = (props) => {
   return (
-    <section>
+    <section className="nav-container">
       <nav>
         <Link to="/users">Users</Link>
         <Link to="/create-user">Create User</Link>
